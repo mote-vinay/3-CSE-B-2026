@@ -1,0 +1,37 @@
+METHOD-1:
+
+cd Desktop
+git clone https://github.com/mote-vinay/3-CSE-D-2026.git
+cd 3 CSE-D-2026
+nano Dockerfile
+---------------------------
+FROM nginx:alpine
+COPY index.html  /usr/share/nginx/html/index.html
+EXPOSE 80
+--------------------------
+ctrl+o Enter Ctrl+x
+
+systemctl --user start docker-desktop
+
+docker build -t event-registration-form .
+
+docker run -dp 8080:80 event-registration-form
+
+
+METHOD-2
+Open GitHub Account and Click Add File----> Create New File--File Name(Dockerfile)
+
+---------------------------
+FROM nginx:alpine
+COPY index.html  /usr/share/nginx/html/index.html
+EXPOSE 80
+--------------------------
+Click Commit Changes and Commit Changes
+
+Open terminal:
+
+docker build -t event-registration-form https://github.com/mote-vinay/3-CSE-B-2026.git
+
+docker run -dp 8083:83 event-registration-form
+
+Open Docker-desktop and follow the link
