@@ -1,0 +1,49 @@
+systemctl --user stop docker-desktop
+sudo apt remove docker-desktop
+docker --version
+
+sudo rm -rf /var/lib/docker
+
+sudo rm -rf /var/lib/containerd
+sudo apt autoremove
+
+sudo apt install ca-certificates curl qemu-system-x86 pass uidmap
+iopen your Browser and serach docker desktop for ubuntu
+Download DEB package
+cd Downloads
+ls
+sudo gdebi docker-desktop-amd64.deb
+systemctl --user start docker-desktop
+
+
+
+DOCKER COMMANDS
+1.Check your docker version
+docker --version
+2. Get information about your docker installation
+docker info
+3. List all downloaded images
+docker images
+4. Download a docker image from Docker Hub
+docker pull <image>
+Ex: docker pull python
+5. Remove a specific image
+Command: docker rmi <image>
+6. Start a new Container
+Command: docker run <image>Ex: docker run python
+7. List Running Containers
+Cmd: docker ps
+8. List all containers,including Stopped ones
+docker ps -a
+9.Stop a Running Container
+docker stop <container_id>
+10. Start a Stopped Container
+docker start <conatiner_id>
+11.Remove a stopped Container
+docker rm <container_id>
+12.View logs from a Specific Container
+docker logs < container_id>
+13. Display Resource usage statistics for running containers
+docker stats
+14. To Build the Image
+docker build -t <Image_Name>
